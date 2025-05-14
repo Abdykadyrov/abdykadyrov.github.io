@@ -77,7 +77,6 @@ function loadScript(src) {
 }
 
 function init() {
-  console.log('init');
   t_onFuncLoad('t396_initialScale', function() {
     t396_initialScale('800711777');
   });
@@ -107,7 +106,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function selectLocale(locale) {
-  console.log(locale);
   const localeWrapper = document.getElementById('localeSelector');
   const welcomeText = document.getElementById('welcomeText');
   const inviteText = document.getElementById('inviteText');
@@ -147,12 +145,11 @@ function selectLocale(locale) {
       presenceText.innerHTML = 'Ваше присутствие:';
       waitText2.innerHTML = 'С нетерпением <br> ждём Вас! ';
       openMapLink.innerHTML = 'открыть карту';
-      calendarSvg.src = './assets/images/calendar.svg';
+      calendarSvg.setAttribute('data-original', './assets/images/calendar.svg');
       googleForm.src = 'https://docs.google.com/forms/d/e/1FAIpQLSdr3W5BmOV_FIe7Yyg4cvMHZy5XvhQK2N0NlnELyvly6p2c4w/viewform?embedded=true';
       googleForm.height = 680;
       break;
     case 'kk': {
-      console.log(waitText);
       welcomeText.innerHTML = 'Құрметті <br> достар мен туыстар!';
       inviteText.innerHTML = 'Сіздерді өміріміздің<br>ең қуанышты, <br>ең есте қалар күндерінің бірі — <br>үйлену тойымызға арналған <br>салтанатты ақ дастарханның қадірлі <br>қонағы болуға шақырамыз !';
       waitText.innerHTML = 'Сіздерді күтеміз: ';
@@ -168,7 +165,7 @@ function selectLocale(locale) {
       presenceText.innerHTML = 'Сіздің қатысуыңыз:';
       waitText2.innerHTML = 'Қуанышымызға<br>ортақ болыңыздар! ';
       openMapLink.innerHTML = 'картаны ашу';
-      calendarSvg.src = './assets/images/calendar_kz.svg';
+      calendarSvg.setAttribute('data-original', './assets/images/calendar_kz.svg');
       googleForm.src = 'https://docs.google.com/forms/d/e/1FAIpQLSdr9YwP5L6a0zGefn3kT_53K-uSlGITQKOvxyLY6ZqwEIMcQg/viewform?embedded=true';
       googleForm.height = 675;
 
