@@ -2076,17 +2076,9 @@
 }
 
 .dressCode {
-  display: flex;
-  flex-direction: column;
+  display: flex !important;
+  flex-direction: column !important;;
   position: absolute;
-  top: 2130px;
-  left: -23px;
-  width: 366px;
-  height: auto;
-  zoom: 1.172;
-  transform: scale(0.9);
-  transition-delay: 0.3s;
-  transition-duration: 3s;
 }
 .dressCode .tn-atom {
   font-family: 'kazakh', Arial, sans-serif;
