@@ -1,3 +1,4 @@
+let LOCALE = 'ru';
 
 function t_onReady(func) {
   if (document.readyState != 'loading') {
@@ -132,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const attendance = attendanceEl.value;
     sendToGoogleSheetsViaIframe(name, attendance);
 
-    message.innerHTML = "Спасибо!<br>Ваш ответ сохранён.";
+    message.innerHTML = LOCALE === 'kk' ? "Рақмет!<br>Жауабыңыз сақталды." : "Спасибо!<br>Ваш ответ сохранён.";
     message.style.color = "green";
     form.reset();
     form.style.display = 'none';
@@ -140,6 +141,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function selectLocale(locale) {
+  LOCALE = locale;
   const localeWrapper = document.getElementById('localeSelector');
   const welcomeText = document.getElementById('welcomeText');
   const inviteText = document.getElementById('inviteText');
