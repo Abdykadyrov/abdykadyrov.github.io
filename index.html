@@ -59,7 +59,7 @@
   <div id="rec800711777" class="r t-rec" style=" " data-animationappear="off" data-record-type="396">
     <!-- T396 -->
     <div class='t396'>
-      <div class="t396__artboard" data-artboard-recid="800711777" data-artboard-screens="320,480,640,960,1200" data-artboard-height="630" data-artboard-valign="center" data-artboard-upscale="window" data-artboard-height-res-320="3400">
+      <div class="t396__artboard" data-artboard-recid="800711777" data-artboard-screens="320,480,640,960,1200" data-artboard-height="630" data-artboard-valign="center" data-artboard-upscale="window" data-artboard-height-res-320="2990">
         <div class="t396__carrier" data-artboard-recid="800711777"></div>
         <div class="t396__filter" data-artboard-recid="800711777"></div>
         <div class='t396__elem tn-elem tn-elem__8007117771725348099766' data-elem-id='1725348099766' data-elem-type='image' data-field-top-value="711" data-field-left-value="-67" data-field-width-value="1996" data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px" data-field-filewidth-value="1070" data-field-fileheight-value="1054" data-field-top-res-320-value="1592" data-field-left-res-320-value="-75" data-field-width-res-320-value="498">
@@ -130,7 +130,7 @@
           </div>
         </div>
         <div class='t396__elem tn-elem tn-elem__8007117771725343513220 t-animate' data-elem-id='1725343513220' data-elem-type='text' data-field-top-value="2367" data-field-left-value="258" data-field-width-value="804" data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px" data-animate-style="zoomin" data-animate-duration="3" data-animate-delay="0.3" data-animate-scale="0.9" data-animate-mobile="y" data-field-top-res-320-value="808" data-field-left-res-320-value="-23" data-field-width-res-320-value="366">
-          <div id="waitText" class='tn-atom' field='tn_text_1725343513220'>Ждём Вас: </div>
+          <div id="weddingText" class='tn-atom' field='tn_text_1725343513220'>Свадебная церемония</div>
         </div>
         <div class='t396__elem tn-elem tn-elem__8007117771725343530305 t-animate' data-elem-id='1725343530305' data-elem-type='text' data-field-top-value="1620" data-field-left-value="382" data-field-width-value="556" data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px" data-animate-style="zoomin" data-animate-duration="3" data-animate-delay="0.3" data-animate-scale="0.9" data-animate-mobile="y" data-field-top-res-320-value="866" data-field-left-res-320-value="47" data-field-width-res-320-value="227">
           <div id="dateText" class='tn-atom' field='tn_text_1725343530305'>23 августа 2025 года в 16:00</div>
@@ -257,11 +257,31 @@
         </div>
           <!-- Форма -->
         <div class='t396__elem tn-elem tn-elem__8007117771725348606602 t-animate' data-elem-id='1725348606602' data-elem-type='text' data-field-top-value="1613" data-field-left-value="-728" data-field-width-value="560" data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px" data-animate-style="fadeinup" data-animate-duration="1.7" data-animate-distance="100" data-animate-mobile="y" data-field-top-res-320-value="2535" data-field-left-res-320-value="30" data-field-width-res-320-value="260">
-          <iframe id="googleFormFrame" src="https://docs.google.com/forms/d/e/1FAIpQLSdr3W5BmOV_FIe7Yyg4cvMHZy5XvhQK2N0NlnELyvly6p2c4w/viewform?embedded=true" width="320" height="680" frameborder="0" marginheight="0" marginwidth="0" scrolling="no" on style="max-width: 100%">Загрузка…</iframe>
+          <div id="customFormWrapper" style="max-width: 320px; margin: 0 auto;">
+            <form id="weddingForm">
+              <input type="text" id="guestName" name="name" required><br><br>
+
+              <label class="weddingForm__radio" style="margin-bottom: 8px;">
+                <input type="radio" name="attendance" value="я с удовольствием приду (один)" required>
+                <span id="attendance_1">я с удовольствием приду (один)</span>
+              </label>
+              <label class="weddingForm__radio" style="margin-bottom: 8px;">
+                <input type="radio" name="attendance" value="я с удовольствием приду со своей половинкой" required>
+                <span id="attendance_2">я с удовольствием приду со своей половинкой</span>
+              </label>
+              <label class="weddingForm__radio">
+                <input type="radio" name="attendance" value="к сожалению, не смогу присутствовать" required>
+                <span id="attendance_3">к сожалению, не смогу присутствовать</span>
+              </label><br><br>
+
+              <button type="submit" style="padding: 10px 20px;">Отправить</button>
+            </form>
+            <p id="formMessage"></p>
+          </div>
         </div>
           <!-- Форма -->
-        <div class='t396__elem tn-elem tn-elem__8007117771725349108585 t-animate' data-elem-id='1725349108585' data-elem-type='text' data-field-top-value="2367" data-field-left-value="258" data-field-width-value="804" data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px" data-animate-style="zoomin" data-animate-duration="3" data-animate-delay="0.3" data-animate-scale="0.9" data-animate-mobile="y" data-field-top-res-320-value="3230" data-field-left-res-320-value="-23" data-field-width-res-320-value="366">
-          <div id="waitText2" class='tn-atom' field='tn_text_1725349108585'></div>
+        <div class='t396__elem tn-elem tn-elem__8007117771725349108585 t-animate' data-elem-id='1725349108585' data-elem-type='text' data-field-top-value="2367" data-field-left-value="258" data-field-width-value="804" data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px" data-animate-style="zoomin" data-animate-duration="3" data-animate-delay="0.3" data-animate-scale="0.9" data-animate-mobile="y" data-field-top-res-320-value="2780" data-field-left-res-320-value="-23" data-field-width-res-320-value="366">
+          <div id="waitText" class='tn-atom' field='tn_text_1725349108585'></div>
         </div>
         <div class='t396__elem tn-elem stopbtnbg tn-elem__8007117771725349489404 t-animate' data-elem-id='1725349489404' data-elem-type='shape' data-field-top-value="1512" data-field-left-value="930" data-field-height-value="100" data-field-width-value="100" data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value="px" data-field-widthunits-value="px" data-animate-style="zoomin" data-animate-duration="1" data-animate-scale="0.9" data-animate-mobile="y" data-field-top-res-320-value="1995" data-field-left-res-320-value="154" data-field-height-res-320-value="10" data-field-width-res-320-value="10">
           <a class='tn-atom t-bgimg' href="#stopsound_1" data-original="./assets/images/pause.png" aria-label='' role="img"></a>
@@ -274,7 +294,7 @@
         <div class='t396__elem tn-elem playbtnbg tn-elem__8007117771725349489370 t-animate' data-elem-id='1725349489370' data-elem-type='shape' data-field-top-value="1412" data-field-left-value="886" data-field-height-value="100" data-field-width-value="100" data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value="px" data-field-widthunits-value="px" data-animate-style="zoomin" data-animate-duration="1" data-animate-scale="0.9" data-animate-mobile="y" data-field-top-res-320-value="1995" data-field-left-res-320-value="154" data-field-height-res-320-value="10" data-field-width-res-320-value="10">
           <a class='tn-atom t-bgimg' href="#playsound_1" data-original="./assets/images/music.png" aria-label='' role="img"></a>
         </div>
-        <div class='t396__elem tn-elem tn-elem__8007117771725349149107 t-animate' data-elem-id='1725349149107' data-elem-type='image' data-field-top-value="1370" data-field-left-value="60" data-field-width-value="503" data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px" data-animate-style="fadeindown" data-animate-duration="3" data-animate-delay="0.3" data-animate-distance="100" data-animate-mobile="y" data-field-filewidth-value="1361" data-field-fileheight-value="1201" data-field-top-res-320-value="3285" data-field-left-res-320-value="-41" data-field-width-res-320-value="131">
+        <div class='t396__elem tn-elem tn-elem__8007117771725349149107 t-animate' data-elem-id='1725349149107' data-elem-type='image' data-field-top-value="1370" data-field-left-value="60" data-field-width-value="503" data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px" data-animate-style="fadeindown" data-animate-duration="3" data-animate-delay="0.3" data-animate-distance="100" data-animate-mobile="y" data-field-filewidth-value="1361" data-field-fileheight-value="1201" data-field-top-res-320-value="2835" data-field-left-res-320-value="-41" data-field-width-res-320-value="131">
           <div class='tn-atom'>
             <img class='tn-atom__img t-img' data-original='./assets/images/sd.png' alt='' imgfield='tn_img_1725349149107' />
           </div>
@@ -293,16 +313,6 @@
         </div>
       </div>
     </div>
-    <script>
-      // t_onFuncLoad('t396_initialScale', function() {
-      //   t396_initialScale('800711777');
-      // });
-      // t_onReady(function() {
-      //   t_onFuncLoad('t396_init', function() {
-      //     t396_init('800711777');
-      //   });
-      // });
-    </script>
     <!-- /T396 -->
   </div>
   <div id="localeSelector">
@@ -562,17 +572,5 @@
     </div>
   </div>
 </div>
-<script>
-  const iframe = document.getElementById('googleFormFrame');
-
-  iframe.addEventListener('load', () => {
-    try {
-      // Прокручиваем содержимое iframe наверх
-      iframe.contentWindow.scrollTo(0, 0);
-    } catch (e) {
-      console.warn('Невозможно получить доступ к содержимому iframe (другой домен?)');
-    }
-  });
-</script>
 </body>
 </html>

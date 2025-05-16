@@ -103,13 +103,47 @@ document.addEventListener('click', init, {
 
 document.addEventListener('DOMContentLoaded', function () {
   document.body.style.overflow = 'hidden';
+
+  // отправка в гугл таблицу
+  const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzmqMMihVmaMnhFJDq1NbRVZowhEO5D9RQ0HOzfHKVjXxt2YQUD2_55w_7t0qywDry4/exec";
+  function sendToGoogleSheetsViaIframe(name, attendance) {
+    const url = `${GOOGLE_SCRIPT_URL}?name=${encodeURIComponent(name)}&attendance=${encodeURIComponent(attendance)}`;
+    const iframe = document.createElement("iframe");
+    iframe.style.display = "none";
+    iframe.src = url;
+    document.body.appendChild(iframe);
+  }
+
+  const form = document.getElementById("weddingForm");
+  const message = document.getElementById("formMessage");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById("guestName").value.trim();
+    const attendanceEl = document.querySelector('input[name="attendance"]:checked');
+
+    if (!attendanceEl) {
+      message.textContent = "Пожалуйста, выберите вариант.";
+      message.style.color = "red";
+      return;
+    }
+
+    const attendance = attendanceEl.value;
+    sendToGoogleSheetsViaIframe(name, attendance);
+
+    message.innerHTML = "Спасибо!<br>Ваш ответ сохранён.";
+    message.style.color = "green";
+    form.reset();
+    form.style.display = 'none';
+  });
 });
 
 function selectLocale(locale) {
   const localeWrapper = document.getElementById('localeSelector');
   const welcomeText = document.getElementById('welcomeText');
   const inviteText = document.getElementById('inviteText');
-  const waitText = document.getElementById('waitText');
+  const weddingText = document.getElementById('weddingText');
   const dateText = document.getElementById('dateText');
   const beforeCelebrationText = document.getElementById('beforeCelebrationText');
   const addressTitleText = document.getElementById('addressTitleText');
@@ -120,10 +154,13 @@ function selectLocale(locale) {
   const endingText = document.getElementById('endingText');
   const ownersText = document.getElementById('ownersText');
   const presenceText = document.getElementById('presenceText');
-  const waitText2 = document.getElementById('waitText2');
+  const waitText = document.getElementById('waitText');
   const openMapLink = document.getElementById('openMapLink');
   const calendarSvg = document.getElementById('calendarSvg');
-  const googleForm = document.getElementById('googleFormFrame');
+  const guestNameInput = document.getElementById('guestName');
+  const attendance1 = document.getElementById('attendance_1');
+  const attendance2 = document.getElementById('attendance_2');
+  const attendance3 = document.getElementById('attendance_3');
   localeWrapper.style.display = 'none';
   document.body.style.overflow = 'auto';
 
@@ -132,8 +169,8 @@ function selectLocale(locale) {
       welcomeText.innerHTML = 'Дорогие <br> наши друзья и родные!';
       inviteText.innerHTML = 'С радостью приглашаем <br>вас разделить с нами этот <br>незабываемый день — день <br>нашей свадьбы! <br>\n' +
         '<br>Ваше присутствие делает этот <br>праздник полным, ведь именно <br>с вами мы хотим разделить <br>все радостные моменты.';
-      waitText.innerHTML = 'Ждём Вас: ';
-      dateText.innerHTML = '23 августа 2025 года в 17:00';
+      weddingText.innerHTML = 'Свадебная церемония:';
+      dateText.innerHTML = 'начнется 23 августа<br>2025 года в 16:00';
       beforeCelebrationText.innerHTML = 'До торжества:';
       addressTitleText.innerHTML = 'По адресу:';
       addressText.innerHTML = 'город Костанай, <br> улица Камшат Доненбаевой 114, <br>банкетный зал <br>" Султан Сарайы " ';
@@ -143,19 +180,21 @@ function selectLocale(locale) {
       endingText.innerHTML = 'Завершение торжества';
       ownersText.innerHTML = 'организаторы<br>Кайыржан - Оксана';
       presenceText.innerHTML = 'Ваше присутствие:';
-      waitText2.innerHTML = 'С нетерпением <br> ждём Вас! ';
+      waitText.innerHTML = 'С нетерпением <br> ждём Вас! ';
       openMapLink.innerHTML = 'открыть карту';
       calendarSvg.setAttribute('data-original', './assets/images/calendar.svg');
-      googleForm.src = 'https://docs.google.com/forms/d/e/1FAIpQLSdr3W5BmOV_FIe7Yyg4cvMHZy5XvhQK2N0NlnELyvly6p2c4w/viewform?embedded=true';
-      googleForm.height = 680;
+      guestNameInput.placeholder = 'Ваше имя';
+      attendance1.textContent = 'я с удовольствием приду (один)';
+      attendance2.textContent = 'я с удовольствием приду со своей половинкой';
+      attendance3.textContent = 'к сожалению, не смогу присутствовать';
       break;
     case 'kk': {
       welcomeText.innerHTML = 'Құрметті <br> достар мен туыстар!';
       inviteText.innerHTML = 'Сіздерді өміріміздің<br>ең қуанышты, <br>ең есте қалар күндерінің бірі — <br>үйлену тойымызға арналған <br>салтанатты ақ дастарханның қадірлі <br>қонағы болуға шақырамыз !';
-      waitText.innerHTML = 'Сіздерді күтеміз: ';
-      dateText.innerHTML = '2025 жылғы 23 тамыз<br>сағат 17:00-де';
+      weddingText.innerHTML = 'Той салтанаты:';
+      dateText.innerHTML = '23 тамыз 2025 жылы,<br>сағат 16:00-да басталады';
       beforeCelebrationText.innerHTML = 'Тойға дейін:';
-      addressTitleText.innerHTML = 'Мекенжай:';
+      addressTitleText.innerHTML = 'Мекенжайымыз:';
       addressText.innerHTML = 'Қостанай қаласы, <br> Қамшат Дөненбаева көшесі, 114, <br> " Сұлтан Сарайы " <br>банкет залы';
       programmText.innerHTML = 'Той бағдарламасы:';
       guestsText.innerHTML = 'қонақтарды қарсы алу';
@@ -163,12 +202,13 @@ function selectLocale(locale) {
       endingText.innerHTML = 'тойдың аяқталуы';
       ownersText.innerHTML = 'Той иелері<br>Қайыржан - Оксана';
       presenceText.innerHTML = 'Сіздің қатысуыңыз:';
-      waitText2.innerHTML = 'Қуанышымызға<br>ортақ болыңыздар! ';
+      waitText.innerHTML = 'Қуанышымызға<br>ортақ болыңыздар! ';
       openMapLink.innerHTML = 'картаны ашу';
       calendarSvg.setAttribute('data-original', './assets/images/calendar_kz.svg');
-      googleForm.src = 'https://docs.google.com/forms/d/e/1FAIpQLSdr9YwP5L6a0zGefn3kT_53K-uSlGITQKOvxyLY6ZqwEIMcQg/viewform?embedded=true';
-      googleForm.height = 675;
-
+      guestNameInput.placeholder = 'Есіміңіз';
+      attendance1.textContent = 'әрине келемін';
+      attendance2.textContent = 'жұбайыммен келемін';
+      attendance3.textContent = 'өкінішке орай, келе алмаймын';
       break;
     }
     default:

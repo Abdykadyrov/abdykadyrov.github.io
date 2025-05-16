@@ -2101,8 +2101,8 @@
 }
 .dressCode__colors > div {
   display: flex;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2.25rem;
+  height: 2.25rem;
   border-radius: 50%;
 }
 
@@ -2120,4 +2120,54 @@
 }
 .dressCode__sage {
   background: #ACB087;
+}
+#weddingForm {
+  font-family: 'kazakh', Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  color: #695353;
+}
+#formMessage {
+  font-family: 'kazakh', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 10px;
+}
+#weddingForm > button {
+  font-family: 'kazakh', Arial, sans-serif;
+  background: #000000;
+  color: white;
+  border: 0;
+  font-size: 12px;
+  line-height: 1.55;
+  font-weight: 600;
+  border-radius: 2em;
+  padding: 0.75em 1.4em;
+}
+#guestName {
+  box-sizing: border-box;
+  width: 100%;
+  font-family: 'kazakh', Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  color: #695353;
+  border: 1px solid #95714F;
+  border-radius: 2em;
+  padding: 0.75em 1.4em;
+}
+.weddingForm__radio {
+  display: flex;
+  align-items: center;
+}
+.weddingForm__radio > input {
+  min-width: 20px;
+  min-height: 20px;
+  max-width: 20px;
+  max-height: 20px;
+  accent-color: #695353;
+  cursor: pointer;
+}
+.weddingForm__radio > span {
+  text-align: left;
+  margin-left: 8px;
 }
