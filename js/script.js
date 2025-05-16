@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const attendanceEl = document.querySelector('input[name="attendance"]:checked');
 
     if (!attendanceEl) {
-      message.textContent = "Пожалуйста, выберите вариант.";
+      message.textContent = LOCALE === 'kk' ? "Опцияны таңдаңыз." : "Пожалуйста, выберите вариант.";
       message.style.color = "red";
       return;
     }
@@ -163,6 +163,7 @@ function selectLocale(locale) {
   const attendance1 = document.getElementById('attendance_1');
   const attendance2 = document.getElementById('attendance_2');
   const attendance3 = document.getElementById('attendance_3');
+  const formSubmitBtn = document.getElementById('formSubmitBtn');
   localeWrapper.style.display = 'none';
   document.body.style.overflow = 'auto';
 
@@ -189,6 +190,7 @@ function selectLocale(locale) {
       attendance1.textContent = 'я с удовольствием приду (один)';
       attendance2.textContent = 'я с удовольствием приду со своей половинкой';
       attendance3.textContent = 'к сожалению, не смогу присутствовать';
+      formSubmitBtn.textContent = 'Отправить';
       break;
     case 'kk': {
       welcomeText.innerHTML = 'Құрметті <br> достар мен туыстар!';
@@ -211,6 +213,7 @@ function selectLocale(locale) {
       attendance1.textContent = 'әрине келемін';
       attendance2.textContent = 'жұбайыммен келемін';
       attendance3.textContent = 'өкінішке орай, келе алмаймын';
+      formSubmitBtn.textContent = 'Жауапты жіберу';
       break;
     }
     default:
